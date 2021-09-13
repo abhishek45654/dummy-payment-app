@@ -6,9 +6,11 @@ import {
 import AmountPage from '../components/AmountPage';
 import PaymentMethod from '../components/PaymentMethod';
 
-export default(
+const routes =(
     <Switch>
-    <Route component={AmountPage} exact path='/' />
+    <Route component={AmountPage} exact path='amount' />
     <Route component={PaymentMethod} path='paymentMethod'/>
     </Switch>
 );
+
+export default routes;

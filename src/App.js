@@ -1,6 +1,10 @@
-import { BrowserRouter, Switch } from 'react-router-dom';
+import React from 'react';
 import './App.css';
-import routeModule from './core/route.modules'
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import AmountPage from './components/AmountPage/AmountPage';
+import PaymentMethod from './components/PaymentMethod/PaymentMethod'
+
+
 function App() {
   return (
     <div className="App">
@@ -8,7 +12,10 @@ function App() {
         <h1>Payment Page</h1>
       </div>
       <BrowserRouter>
-        {routeModule}
+        <Switch>
+          <Route component={AmountPage} exact path='/' />
+          <Route component={PaymentMethod} path='/paymentMethod/:amount' />
+        </Switch>
       </BrowserRouter>
     </div>
   );
