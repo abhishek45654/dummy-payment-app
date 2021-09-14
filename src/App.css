@@ -1,6 +1,3 @@
-.App {
-  text-align: center;
-}
 header {
   position: fixed;
   top: 0%;
@@ -12,4 +9,5 @@ header {
 .header h1 {
   color: white;
   font-family: 'Courier New', Courier, monospace;
+  text-align: center;
 }
