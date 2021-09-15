@@ -1,59 +1,30 @@
 import React, {useState} from 'react';
+import { useHistory } from 'react-router-dom';
 import styles from './PaymentMethod.scss';
 import credit from '../../images/credit-card-icon.jpg';
 import debit from '../../images/ATM-Debit-Card.jpg';
 
 
-const CreditCardForm = (props) => {
-	const [creditState,setCreditState] = useState({
-		amount: props.match.params.amount,
-		cardNumber:"",
-		cardExpiryDate:"",
-		cardCVC: ""
-	})
-	return (
-		<div>
-			<h1>Amount: {props.match.params.amount}</h1>
-			<form>
-				<input type="text" name="cardNumber" onChange={e=>setCreditState(e.target.value.cardNumber)}/>
-				<input type="text" name="cardExpiryDate" onChange={e=>setCreditState(e.target.value.cardExpiryDate)}/>
-				<input type="text" name="cardCVC" onChange={e=>setCreditState(e.target.value.cardCVC)}/>
-			</form>
-		</div>
-	);
-}
-const DebitCardForm = (props) => {
-	const [debitState,setDebitState] = useState({
-		amount: props.match.params.amount,
-		cardNumber:"",
-		cardExpiryDate:"",
-		cardCVV: ""
-	})
-	return (
-		<div>
-			<h1>Amount: {props.match.params.amount}</h1>
-			<form>
-				<input type="text" name="cardNumber" onChange={e=>setDebitState(e.target.value.cardNumber)}/>
-				<input type="text" name="cardExpiryDate" onChange={e=>setDebitState(e.target.value.cardExpiryDate)}/>
-				<input type="text" name="cardCVV" onChange={e=>setDebitState(e.target.value.cardCVV)}/>
-			</form>
-		</div>
-	);
-}
+
 const PaymentMethod = (props) => {
 	console.log(props.match.params.amount)
-	let method = "";
-	const creditCard = () => {
-		method = <CreditCardForm {...props}/>;
+	const history = useHistory();
+	let Method ="";
+	const creditCard = (e) => {
+		Method = "credit";
+		e.preventDefault();
+		history.push("/paymentforms/credit/"+props.match.params.amount);
 	}	
-	const debitCard = () => {
-		method = <DebitCardForm {...props}/>;
+	const debitCard = (e) => {
+		Method = "debit";
+		e.preventDefault();
+		history.push("/paymentforms/debit/"+props.match.params.amount);
+		console.log(Method)
 	}
 	return (
 		<div className="payMethod">
 			<img src={credit} alt="credit" onClick={creditCard} />
 			<img src={debit} alt="debit" onClick={debitCard}/>
-			{method}
 		</div>);
 }
 

@@ -6,6 +6,7 @@ const AmountPage = () => {
 	const history = useHistory();
 	const [state, setState] = useState('');
 	const submit = (e) => {
+		e.preventDefault();
 		history.push("/paymentMethod/"+state);
 	}
 	return (
