@@ -1,9 +1,7 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import AmountPage from './components/AmountPage/AmountPage';
-import PaymentMethod from './components/PaymentMethod/PaymentMethod'
-import PaymentForms from './components/PaymentForms/PaymentForms';
+import { BrowserRouter} from 'react-router-dom';
+import routes from './core/route.modules';
 
 
 function App() {
@@ -13,11 +11,7 @@ function App() {
         <h1>Payment Page</h1>
       </div>
       <BrowserRouter>
-        <Switch>
-          <Route component={AmountPage} exact path='/' />
-          <Route component={PaymentMethod} path='/paymentMethod/:amount' />
-          <Route component={PaymentForms} path ='/paymentforms/:type/:amount'/>
-        </Switch>
+        {routes}
       </BrowserRouter>
     </div>
   );
