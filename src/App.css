@@ -1,7 +1,6 @@
 header {
   position: fixed;
-  top: 0%;
-  left: 0%;
+  display: flex;
   background-color: rgb(124, 33, 124);
   height: 10%;
   width: 100%;

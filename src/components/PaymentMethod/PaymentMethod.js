@@ -1,30 +1,16 @@
-import React, {useState} from 'react';
-import { useHistory } from 'react-router-dom';
+import React from 'react';
+import {Link, useParams } from 'react-router-dom';
 import styles from './PaymentMethod.scss';
-import credit from '../../images/credit-card-icon.jpg';
-import debit from '../../images/ATM-Debit-Card.jpg';
-
 
 
 const PaymentMethod = (props) => {
-	console.log(props.match.params.amount)
-	const history = useHistory();
-	let Method ="";
-	const creditCard = (e) => {
-		Method = "credit";
-		e.preventDefault();
-		history.push("/paymentforms/credit/"+props.match.params.amount);
-	}	
-	const debitCard = (e) => {
-		Method = "debit";
-		e.preventDefault();
-		history.push("/paymentforms/debit/"+props.match.params.amount);
-		console.log(Method)
-	}
+	let {amount} = useParams();
 	return (
 		<div className="payMethod">
-			<img src={credit} alt="credit" onClick={creditCard} />
-			<img src={debit} alt="debit" onClick={debitCard}/>
+			<div className="list">
+				<ul><Link to={"/paymentmethod/" + amount + "/credit"} className="link">Credit Card</Link></ul>
+				<ul><Link to={"/paymentmethod/" + amount + "/debit"} className="link">Debit Card</Link></ul>
+			</div>
 		</div>);
 }
 

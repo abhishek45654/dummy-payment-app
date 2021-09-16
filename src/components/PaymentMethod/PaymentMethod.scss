@@ -1,11 +1,20 @@
 /* todo: delete file if not needed */
 .payMethod {
-    margin-top: 10%;
-    margin-left: 3%;
+    height: 100vh;
+    width: 15%;
+    background-color: rgb(124, 33, 124);
 }
-.payMethod img {
-    height: 10%;
-    width: 10%;
-    border-radius: 8px;
-    margin-right: 2%;
+.list{
+    padding-top: 50%;
+}
+.list ul {
+    font-size: 20px;
+    border-bottom: 2px;
+    padding-bottom: 7px;
+    border-bottom-color: white;
+    border-bottom-style: solid;
+}
+.link {
+    text-decoration: none;
+    color: white;
 }
