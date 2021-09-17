@@ -9,7 +9,7 @@ const CreditCardForm = (props) => {
 		amount: props.match.params.amount,
 		cardNumber:"",
 		cardExpiryDate:"",
-		cardCVC: ""
+		cardCVV: ""
 	})
 	const handleChange = (event) => {
 		setCreditState({...creditState,[event.target.name]:event.target.value});
@@ -22,17 +22,14 @@ const CreditCardForm = (props) => {
 		<div className="wrapper">
 			<PaymentMethod />
 			<div className="methodForm">
-				<h1>Amount : {props.match.params.amount}</h1>
 				<form onSubmit={submit} className="form">
-					<label><h1>Card Number :</h1>
-						<input type="text" name="cardNumber" placeholder="Enter the credit card number" onChange={handleChange} />
-						<h1>Card Expiry Date :</h1>
-						<input type="text" name="cardExpiryDate" placeholder="Enter the expiry date" onChange={handleChange} />
-						<h1>Card CVV :</h1>
-						<input type="text" name="cardCVC" placeholder="Enter the CVV" onChange={handleChange} /></label>
-					<input type="submit" style={{ backgroundColor: "rgb(124, 33, 124)", color: "white", marginLeft: "15px" }} />
+					<input type="text" name="cardNumber" placeholder="Credit Card Number" onChange={handleChange} />
+					<input type="text" name="cardExpiryDate" placeholder="MM/YY" onChange={handleChange} />
+					<input type="text" name="cardCVV" placeholder="CVV" onChange={handleChange} />
+					<input type="submit" style={{width:"35%",marginTop:"15px",marginBottom:"15px",position:"revert" }} />
 				</form>
 			</div>
+			<h1>Amount : {props.match.params.amount}</h1>
 		</div>
 	);
 }
@@ -54,17 +51,14 @@ const DebitCardForm = (props) => {
 		<div className="wrapper">
 			<PaymentMethod />
 			<div className="methodForm">
-				<h1>Amount : {props.match.params.amount}</h1>
 				<form onSubmit={submit} className="form">
-					<label><h1>Card Number :</h1>
-						<input type="text" name="cardNumber" placeholder="Enter the debit card number" onChange={handleChange} />
-						<h1>Card Expiry Date :</h1>
-						<input type="text" name="cardExpiryDate" placeholder="Enter the expiry date" onChange={handleChange} />
-						<h1>Card CVV :</h1>
-						<input type="text" name="cardCVV" placeholder="Enter the CVV" onChange={handleChange} /></label>
-					<input type="submit" style={{ backgroundColor: "rgb(124, 33, 124)", color: "white", marginLeft: "15px" }} />
+					<input type="text" name="cardNumber" placeholder="Debit Card Number" onChange={handleChange} />
+					<input type="text" name="cardExpiryDate" placeholder="MM/YY" onChange={handleChange} />
+					<input type="text" name="cardCVV" placeholder="CVV" onChange={handleChange} />
+					<input type="submit" style={{width:"35%",marginTop:"15px",marginBottom:"15px",position:"revert" }} />
 				</form>
 			</div>
+			<h1>Amount : {props.match.params.amount}</h1>
 		</div>
 	);
 }

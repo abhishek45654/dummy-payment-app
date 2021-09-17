@@ -1,12 +1,37 @@
 /* todo: delete file if not needed */
 .methodForm {
-    margin-top: 15%;
-    margin-left: 15%;
+    margin-top: 7%;
+    margin-left: 4%;
 }
 .wrapper {
     display: flex;
 }
+.wrapper h1 {
+    margin-top: 7%;
+}
 .form input {
     height: 40px;
     font-size: 30px;
+    margin-left: 10px;
+    margin-top: 20px;
+    border-radius: 7px;
+}
+.form input[name=cardNumber] {
+    width: 90%;
+}
+.form input[name=cardExpiryDate] {
+    width: 30%;
+}
+.form input[name=cardCVV] {
+    width: 20%;
+    margin-left: 38%;
+}
+.form {
+    background-color: rgb(124, 33, 124);
+    border-radius: 10px;
+    width: 35%;
+}
+.form h2 {
+    color: white;
+    padding-left: 10px;
 }
