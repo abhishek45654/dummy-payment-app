@@ -1,12 +1,21 @@
-header {
+.header {
   position: fixed;
   display: flex;
   background-color: rgb(124, 33, 124);
   height: 10%;
   width: 100%;
+  border-bottom: 2px;
+  border-bottom-color:white ;
+  border-bottom-style:solid ;
+  justify-content: space-between;
 }
 .header h1 {
   color: white;
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
+}
+.header img {
+  border-radius: 35px;
+  height: 70%;
+  width: 4%;
 }
