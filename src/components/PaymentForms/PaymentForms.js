@@ -22,6 +22,7 @@ const CreditCardForm = (props) => {
 		<div className="wrapper">
 			<PaymentMethod />
 			<div className="methodForm">
+				<h1>Credit Card Details</h1>
 				<form onSubmit={submit} className="form">
 					<input type="text" name="cardNumber" placeholder="Credit Card Number" onChange={handleChange} />
 					<input type="text" name="cardExpiryDate" placeholder="MM/YY" onChange={handleChange} />
@@ -29,7 +30,10 @@ const CreditCardForm = (props) => {
 					<input type="submit" style={{width:"35%",marginTop:"15px",marginBottom:"15px",position:"revert" }} />
 				</form>
 			</div>
-			<h1>Amount : {props.match.params.amount}</h1>
+			<div className="details">
+				<ul><h1>Amount : {props.match.params.amount}</h1></ul>
+				<ul><h1>Product Details :</h1></ul>
+			</div>
 		</div>
 	);
 }
@@ -51,6 +55,7 @@ const DebitCardForm = (props) => {
 		<div className="wrapper">
 			<PaymentMethod />
 			<div className="methodForm">
+				<h1>Debit Card Details</h1>
 				<form onSubmit={submit} className="form">
 					<input type="text" name="cardNumber" placeholder="Debit Card Number" onChange={handleChange} />
 					<input type="text" name="cardExpiryDate" placeholder="MM/YY" onChange={handleChange} />
@@ -58,7 +63,10 @@ const DebitCardForm = (props) => {
 					<input type="submit" style={{width:"35%",marginTop:"15px",marginBottom:"15px",position:"revert" }} />
 				</form>
 			</div>
-			<h1>Amount : {props.match.params.amount}</h1>
+			<div className="details">
+				<ul><h1>Amount : {props.match.params.amount}</h1></ul>
+				<ul><h1>Product Details :</h1></ul>
+			</div>
 		</div>
 	);
 }
